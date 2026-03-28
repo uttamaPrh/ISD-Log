@@ -1,6 +1,4 @@
 - [Session 4 : Classes and Objects](#session-4--classes-and-objects)
-  - [Portfolio Structure for Week 4](#portfolio-structure-for-week-4)
-  - [Session\_4 Structure](#session_4-structure)
   - [Section 1 Python Classes](#section-1-python-classes)
     - [Exercise 1 Task 1: Creating Classes and Initializing Objects](#exercise-1-task-1-creating-classes-and-initializing-objects)
     - [Exercise 1 Task 2: Adding, Deleting, Viewing Methods to a Class](#exercise-1-task-2-adding-deleting-viewing-methods-to-a-class)
@@ -21,44 +19,6 @@
 
 
 # Session 4 : Classes and Objects
-## Portfolio Structure for Week 4
-
-```text
-exercise_1/
-    src
-        main.py
-        tasklist.py
-        tasks.py
-
-exercise_2/
-    src/
-        __pycache__/
-            tasklist.cpython-314.pyc
-            tasks.cpython-314.pyc
-        main.py
-        tasklist.py
-        tasks.py
-```
-
-## Session_4 Structure
-
-```text
-session_4/
-    ToDoApp/
-        __pycache__/
-            task_list.cpython-314.pyc
-            tasks.cpython-314.pyc
-        main.py
-        task_list.py
-        tasks.py
-    section4/
-        __pycache__/
-        main.py
-        tasklist.py
-        tasks.py
-    lab_week_4.py
-```
-
 ## Section 1 Python Classes
 
 ### Exercise 1 Task 1: Creating Classes and Initializing Objects
@@ -153,8 +113,7 @@ after deletion: ['Submit assignment']
 ``` python 
 # Task: Add the code to the view_tasks method. Rather than printing the tasks list directly, you should
 # iterate over the tasks list and print each task individually and also include its index. Hint: You can use a
-# for loop to iterate over the tasks list. (Hint 2: If you want to be very efficient, read up on the enumerate
-# function in Python https://sparkbyexamples.com/python/for-loop-enumerate-in-python/ ) 
+# for loop to iterate over the tasks list.
 
 class TaskList:
     def __init__(self, subject):
@@ -257,7 +216,7 @@ class TaskList:
             for index, task in enumerate(self.tasks):
                 print(f"{index}: {task}")
 
-my_tasks_list = TaskList("Your Name")
+my_tasks_list = TaskList("Assignment")
 my_tasks_list.add_task("Do Homework", "Submit Assignment", "Study for Exam")
 print("Tasks after adding:", my_tasks_list.view_tasks())
 my_tasks_list.remove_task(1)
@@ -872,16 +831,13 @@ Task deleted.
 
 ### Exercise 3 Task 1: Restructuring
 
-Task: Create a new folder called ToDoApp in the session_4 folder. In this folder, create a new file called
-main.py. This will be our main script. Then create two new files called tasks.py and task_list.py.
-These will be our modules.
+Task: Create a new folder called ToDoApp in the session_4 folder. In this folder, create a new file called main.py. 
 
 ![folder structure](images/image.png)
 
 ### Exercise 3 Task 2: Main()
 
-Task: Whilst the actual functionality of the program has not changed, we have now modularized our code further. To ensure that everything still works as expected, test your code again. You should be able
-to run the main.py file and see the options to interact with the task list (but this time the logic mainly happens in the main.py file rather than in the TaskList class). 
+Task: Whilst the actual functionality of the program has not changed, we have now modularized our code further.
 
 ``` Python 
 # main.py
@@ -911,9 +867,7 @@ def propagate_task_list(task_list: TaskList) -> TaskList:
 
 def main() -> None:
     # creating a new task list object
-    task_list = TaskList("YOUR NAME")
-
-    # propagate the task list with some sample tasks
+    task_list = TaskList("Assignment")
     task_list = propagate_task_list(task_list)
 
 
@@ -932,7 +886,6 @@ def main() -> None:
             title = input("Enter a task: ")
             input_date = input("Enter a due date (YYYY-MM-DD): ")
             date_object = datetime.datetime.strptime(input_date, "%Y-%m-%d")
-            # create a new task object based on the title entered and the date entered
             task = Task(title, date_object)
             task_list.add_task(task)
 
@@ -1063,7 +1016,7 @@ To-Do List Manager
 5. Complete a task
 6. Quit
 Enter your choice: 2
-Task list for YOUR NAME:
+Task list for Assignment:
 0: Buy groceries (created: 2026-03-09 05:10:45.881034, due: 2026-03-05 05:10:45.881005, completed: False)
 1: Do laundry (created: 2026-03-09 05:10:45.881042, due: 2026-03-11 05:10:45.881037, completed: False)
 2: Clean room (created: 2026-03-09 05:10:45.881046, due: 2026-03-08 05:10:45.881044, completed: False)
